@@ -1,0 +1,17 @@
+{
+  "name": "weatherds",
+  "connector": "rest",
+  "baseURL": "https://twcservice.mybluemix.net/api/weather",
+  "crud": true,
+  "operations": [
+    {
+      "template": {
+        "method": "GET",
+        "url": "https://twcservice.mybluemix.net/api/weather/v1/geocode/{latitude}/{longitude}/forecast/daily/3day.json"
+      },
+      "functions": {
+        "get3DayForecast": ["latitude", "longitude"]
+      }
+    }
+  ]
+}
